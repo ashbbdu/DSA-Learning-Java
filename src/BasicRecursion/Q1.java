@@ -52,6 +52,20 @@ public static void printnto1 (int start ,int n) {
 
  }
 
+    public static int sumoffirstNNumbers(int N) {
+        if (N == 0) {
+            return 0 ;
+        }
+        return N + sumoffirstNNumbers(N - 1);
+    }
+
+    public static int factorial(int N) {
+        if (N <= 1) {
+            return 1 ;
+        }
+        return N * factorial(N - 1);
+    }
+
     public static void main(String[] args) {
         printxntimes(3 , 4);
         System.out.println("Q2");
@@ -61,5 +75,10 @@ public static void printnto1 (int start ,int n) {
 
         System.out.println("Q4");
         removeextrastartvariable(5);
+
+        System.out.println("Q4");
+        System.out.println(sumoffirstNNumbers(3));
+        System.out.println("Q5");
+        System.out.println(factorial(3));
     }
 }
