@@ -66,6 +66,21 @@ public static void printnto1 (int start ,int n) {
         return N * factorial(N - 1);
     }
 
+
+    public static int sum (int [] arr , int left) {
+        if(left >= arr.length) {
+            return 0 ;
+        }
+
+        return arr[left] +  sum(arr , left + 1);
+
+    }
+
+    public static int sumofarrs (int[] arr) {
+        return sum(arr, 0);
+    }
+
+
     public static void main(String[] args) {
         printxntimes(3 , 4);
         System.out.println("Q2");
@@ -80,5 +95,9 @@ public static void printnto1 (int start ,int n) {
         System.out.println(sumoffirstNNumbers(3));
         System.out.println("Q5");
         System.out.println(factorial(3));
+        System.out.println("Q6");
+        int[] numbers = {1, 2, 3};
+
+        System.out.println( sumofarrs(numbers));
     }
 }
