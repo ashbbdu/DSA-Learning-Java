@@ -56,11 +56,21 @@ public class Questions {
         }
         return largestDigit;
     }
+
+    public static int factorial (int num) {
+        int factorial = 1;
+        for(int i = 1 ; i <= num ; i++) {
+            factorial = factorial * i;
+        }
+        return  factorial;
+    }
+
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
         System.out.println(reverseNumber(1357));
         System.out.println(palindromeCheck(12321));
         System.out.println(largestDigit(1234549));
+        System.out.println(factorial(5));
     }
 }
