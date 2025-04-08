@@ -77,6 +77,17 @@ public class Questions {
         return  ref == totalCount;
     }
 
+    public static boolean isPerfect (int num) {
+        int ref = num;
+        int val = 0;
+        for (int i =1 ; i <= num/2  ; i++) {
+            if(num % i == 0) {
+                val = val + i;
+            }
+        }
+        return ref == val;
+    }
+
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
@@ -85,5 +96,6 @@ public class Questions {
         System.out.println(largestDigit(1234549));
         System.out.println(factorial(5));
         System.out.println(checkArmstrong(153));
+        System.out.println(isPerfect(496));
     }
 }
