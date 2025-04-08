@@ -65,6 +65,18 @@ public class Questions {
         return  factorial;
     }
 
+    public static boolean checkArmstrong (int num) {
+        int totalDigits = countdigitsofanumber(num);
+        int ref = num;
+        int totalCount = 0;
+        while(num > 0) {
+            int lastDigit = num % 10;
+            totalCount = totalCount + (int) Math.pow(lastDigit , totalDigits);
+            num = num /10;
+        }
+        return  ref == totalCount;
+    }
+
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
@@ -72,5 +84,6 @@ public class Questions {
         System.out.println(palindromeCheck(12321));
         System.out.println(largestDigit(1234549));
         System.out.println(factorial(5));
+        System.out.println(checkArmstrong(153));
     }
 }
