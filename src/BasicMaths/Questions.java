@@ -44,10 +44,23 @@ public class Questions {
         }
         return  ref == rev;
     }
+
+    public static int largestDigit (int num) {
+        int largestDigit = 0;
+        while (num > 0) {
+            int lastDigit = num % 10;
+            if(largestDigit < lastDigit) {
+                largestDigit = lastDigit;
+            }
+            num = num / 10;
+        }
+        return largestDigit;
+    }
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
         System.out.println(reverseNumber(1357));
         System.out.println(palindromeCheck(12321));
+        System.out.println(largestDigit(1234549));
     }
 }
