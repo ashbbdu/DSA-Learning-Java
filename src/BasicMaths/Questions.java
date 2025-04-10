@@ -123,6 +123,9 @@ public class Questions {
 
 
     public static int gretestCommonDivisorOptimal (int n1 , int n2) {
+//        Time Complexity: O(log(min(N1, N2))) – where N1 and N2 are given numbers. Because in every iteration, the algorithm is dividing larger number with the smaller number resulting in time complexity.(approx.)
+
+//                Space Complexity: O(1) – Using a couple of variables i.e., constant space.
         while (n1 != 0 && n2 != 0) {
             if(n1 > n2) {
 //                n1 = n1 - n2;
