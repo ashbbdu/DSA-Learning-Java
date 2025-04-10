@@ -101,6 +101,7 @@ public class Questions {
 
     public static int gretestCommonDivisorBrute (int n1 , int n2) {
 //        TC => O(Min(n1 , n2))
+//        SC => O(1)
         int largest = 1;
         for(int i = 2 ;  i <= Math.min(n1 , n2); i++) {
             if(n1 % i == 0 && n2 % i == 0) {
@@ -108,6 +109,16 @@ public class Questions {
             }
         }
         return largest;
+    }
+
+    public static int gretestCommonDivisorBetter (int n1 , int n2) {
+        int gcd = 1;
+        for (int i = Math.min(n1 , n2) ; i >= 2; i--) {
+            if(n1 % i == 0 && n2 % i == 0) {
+                return i;
+            }
+        }
+        return gcd;
     }
 
     public static void main(String[] args) {
@@ -121,5 +132,7 @@ public class Questions {
         System.out.println(isPerfect(496));
         System.out.println(isPrime(1));
         System.out.println(gretestCommonDivisorBrute(5 , 10));
+        System.out.println(gretestCommonDivisorBetter(5 , 10));
+
     }
 }
