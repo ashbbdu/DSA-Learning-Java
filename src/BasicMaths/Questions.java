@@ -99,6 +99,16 @@ public class Questions {
         return val <= 2;
     }
 
+    public static int gretestCommonDivisorBrute (int n1 , int n2) {
+        int largest = 1;
+        for(int i = 2 ;  i <= Math.min(n1 , n2); i++) {
+            if(n1 % i == 0 && n2 % i == 0) {
+                largest = i;
+            }
+        }
+        return largest;
+    }
+
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
@@ -109,5 +119,6 @@ public class Questions {
         System.out.println(checkArmstrong(153));
         System.out.println(isPerfect(496));
         System.out.println(isPrime(1));
+        System.out.println(gretestCommonDivisorBrute(5 , 10));
     }
 }
