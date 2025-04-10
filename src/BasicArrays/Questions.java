@@ -20,6 +20,8 @@ public class Questions {
     }
 
 
+
+
 //    public static void revArrBrute (int [] arr) {
 //        for(int i = 0 ; i < arr.length ; i++) {
 //           arr[i] = arr[arr.length - 1] - i;
@@ -40,10 +42,21 @@ public class Questions {
         }
     }
 
+    public static boolean checkSorted (int[] arr) {
+//        Given an array arr of size n, the task is to check if the given array is sorted in (ascending / Increasing / Non-decreasing) order. If the array is sorted then return True, else return False.
+        for(int i = 0 ; i < arr.length -1 ; i++) {
+            if(arr[i] > arr[i+1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public static void main(String[] args) {
         int [] arr = {1,2,3,4,5};
         int size = arr.length;
+        System.out.println(checkSorted(arr));
         System.out.println(sumofarray(arr));
         System.out.println(countOdd(arr , size));
 //        revArrBrute(arr);
@@ -54,5 +67,10 @@ public class Questions {
         for(int i = 0;i < arr.length ;i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
+        int [] arr2 = {5, 4 ,3 ,2 ,1 };
+        System.out.println(checkSorted(arr2));
+
+
     }
 }
