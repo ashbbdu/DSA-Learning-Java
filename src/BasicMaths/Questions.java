@@ -1,5 +1,11 @@
 package BasicMaths;
 
+import com.sun.source.tree.Tree;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeSet;
+
 public class Questions {
     public static int countdigitsofanumber (int num) {
         if(num == 0) return 1;
@@ -141,6 +147,34 @@ public class Questions {
         return n1;
     }
 
+
+    public static int lcmoftwoNumbers (int n1 , int n2) {
+        int gcd = gretestCommonDivisorOptimal(n1, n2);
+
+        int lcm = (n1 * n2) / gcd;
+
+        // Return the LCM
+        return lcm;
+    }
+
+    public static int []  divisorOfAnumberBrute (int n) {
+        int count = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+        int[] divisors = new int[count];
+        int index = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                divisors[index++] = i;
+            }
+        }
+
+        return divisors;
+    }
+
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
@@ -154,6 +188,13 @@ public class Questions {
         System.out.println(gretestCommonDivisorBrute(5 , 10));
         System.out.println(gretestCommonDivisorBetter(5 , 10));
         System.out.println(gretestCommonDivisorOptimal(5,10));
+        System.out.println(lcmoftwoNumbers(12,18));
+        int [] arr = divisorOfAnumberBrute(6);
+        System.out.println();
+        for(int i = 0 ; i < arr.length ; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
 
     }
 }
