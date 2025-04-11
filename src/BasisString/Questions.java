@@ -30,6 +30,20 @@ public class Questions {
        }
     }
 
+
+    public static boolean checkPalindrome (String str) {
+        int start = 0;
+        int end = str.length() - 1;
+        while(start < end) {
+            if(str.charAt(start) !=  str.charAt(end)) {
+                return  false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         String name = "ashish";
         name = name + 'a';
@@ -52,6 +66,9 @@ public class Questions {
 
         reverseStringBrute(vc);
         System.out.println(vc);
+
+        String st = "abcba";
+        System.out.println(checkPalindrome(st));
 
     }
 }
