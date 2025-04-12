@@ -69,6 +69,15 @@ public class Questions {
         return  str.substring(zeroIndex + 1 , oddNumberIndex+1);
     }
 
+
+    public static boolean validAnagramBrute (String a , String b) {
+        char [] arr1 = a.toCharArray();
+        char [] arr2 = b.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        return Arrays.equals(arr1 , arr2);
+    }
+
 //    Longest common prefix
 
     public static String longestCommonPrefix (String [] arr) {
@@ -79,10 +88,24 @@ public class Questions {
         for(int i = 0 ; i < Math.min(first.length() , last.length()) ; i++) {
             if(first.charAt(i) == last.charAt(i)) {
                 ans = ans.append(first.charAt(i));
+            } else {
+               break;
             }
         }
         return  ans.toString();
     }
+
+//    public static boolean rotateString (String s , String goad) {
+//        int sIndex = 0;
+//        int goadIndex = goad.length() - 1;
+//
+//        if(goad.length() != s.length()) return  false;
+//
+//        for(int i = 0 ; i < s.length() ; i++) {
+//           s = s.substring(sIndex , goadIndex - 1)
+//        }
+//
+//    }
 
     public static void main(String[] args) {
         String name = "ashish";
@@ -114,9 +137,18 @@ public class Questions {
         System.out.println(largestOddNumber("5347"));
 
 
-        String [] arr = {"flowers" , "flow" , "fly", "flight"};
+        String [] arr = {"dog","racecar","car"};
+
+//        car , dog ,racecar
 
         System.out.println(longestCommonPrefix(arr));;
+
+//        char [] a1 = {'a' , 'b'};
+//        char [] a2 = {'a' , 'b'};
+//        System.out.println("Test");
+//        System.out.println(Arrays.equals(a1 , a2));
+//        System.out.println("Test");
+        System.out.println(validAnagramBrute("anagram" , "nagaraam"));
     }
 
 }

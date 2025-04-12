@@ -26,5 +26,6 @@ public class Test {
         int a = 's';
         System.out.println(a);
         System.out.println('s' +  0);
+
     }
 }
