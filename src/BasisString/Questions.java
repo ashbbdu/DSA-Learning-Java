@@ -1,5 +1,7 @@
 package BasisString;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Stack;
 import java.util.Vector;
 
@@ -67,6 +69,21 @@ public class Questions {
         return  str.substring(zeroIndex + 1 , oddNumberIndex+1);
     }
 
+//    Longest common prefix
+
+    public static String longestCommonPrefix (String [] arr) {
+        Arrays.sort(arr);
+        String first = arr[0];
+        StringBuilder ans = new StringBuilder();
+        String last = arr[arr.length - 1];
+        for(int i = 0 ; i < Math.min(first.length() , last.length()) ; i++) {
+            if(first.charAt(i) == last.charAt(i)) {
+                ans = ans.append(first.charAt(i));
+            }
+        }
+        return  ans.toString();
+    }
+
     public static void main(String[] args) {
         String name = "ashish";
         name = name + 'a';
@@ -96,6 +113,10 @@ public class Questions {
 
         System.out.println(largestOddNumber("5347"));
 
+
+        String [] arr = {"flowers" , "flow" , "fly", "flight"};
+
+        System.out.println(longestCommonPrefix(arr));;
     }
 
 }
