@@ -21,6 +21,10 @@ public class Test {
         }
 
         String str = "ashish";
-        System.out.println(str.charAt(str.length() - 1));
+//        System.out.println(str.charAt(str.length() - 1));
+        System.out.println(str.charAt(1) + '0');
+        int a = 's';
+        System.out.println(a);
+        System.out.println('s' +  0);
     }
 }

@@ -44,6 +44,29 @@ public class Questions {
         return true;
     }
 
+    public static String largestOddNumber (String str) {
+        int zeroIndex = -1;
+        int oddNumberIndex = -1;
+
+        for(int i = str.length() - 1 ; i >= 0 ; i--) {
+            if((str.charAt(i) + '0') % 2 == 1 ) {
+                oddNumberIndex = i;
+                break;
+            }
+        }
+
+        if(oddNumberIndex == -1) return "";
+        for(int i = 0 ; i < str.length() ; i++) {
+            if((str.charAt(i)) == '0') {
+                zeroIndex = i;
+            } else {
+                break;
+            }
+        }
+
+        return  str.substring(zeroIndex + 1 , oddNumberIndex+1);
+    }
+
     public static void main(String[] args) {
         String name = "ashish";
         name = name + 'a';
@@ -70,5 +93,9 @@ public class Questions {
         String st = "abcba";
         System.out.println(checkPalindrome(st));
 
+
+        System.out.println(largestOddNumber("5347"));
+
     }
+
 }
