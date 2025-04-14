@@ -139,6 +139,23 @@ public class Questions {
         return palindrome(s , left , right);
     }
 
+    public static void reverse (int left , int right , int [] arr) {
+        if(left >= right) {
+            return ;
+        }
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        reverse(left + 1 , right - 1, arr);
+    }
+    public static int[] reverseArray(int[] nums) {
+        //your code goes here
+        int left = 0;
+        int right = nums.length - 1;
+        reverse(left , right , nums);
+        return nums;
+    }
+
     public static void main(String[] args) {
 //        printNameTail();
 
@@ -160,6 +177,7 @@ public class Questions {
         System.out.println(factorialOfANumber(5));
 
         int [] arr = {1,2,3};
+        System.out.println(arr.length);
         System.out.println(arrSum(arr , 0));
 
         Vector<Character> s = new Vector<>();
@@ -173,6 +191,13 @@ public class Questions {
         System.out.println(s);
         System.out.println("Check Palindrome");
         System.out.println(checkPalindrome("nitin"));
+
+
+        int brr [] = {1,2,3 , 4,5};
+       int [] crr = reverseArray(brr);
+        for(var el : crr) {
+            System.out.print(el + " ");
+        }
     }
 
 }
