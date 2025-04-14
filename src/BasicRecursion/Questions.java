@@ -48,6 +48,8 @@ public class Questions {
         print1toN(start + 1  , n);
     }
 
+
+
     public static void printNto1 (int start ,int n) {
         if(n < start) {
             return;
@@ -56,6 +58,25 @@ public class Questions {
         printNto1(start , n - 1);
 
     }
+
+    public static void printNto1WithoutStartVar (int n) {
+        if(n == 0) {
+            return;
+        }
+        System.out.println(n);
+        printNto1WithoutStartVar(n - 1);
+    }
+
+
+    public static void print1toNWithoutStartVar (int n) {
+        if(n == 0) {
+            return;
+        }
+        print1toNWithoutStartVar(n - 1);
+        System.out.println(n);
+
+    }
+
     public static void main(String[] args) {
 //        printNameTail();
 
@@ -63,6 +84,12 @@ public class Questions {
 //        printXNNumberofTimes(4,4);
 //        print1toN(1 , 4);
         printNto1(1,4);
+        System.out.println();
+        System.out.println();
+        printNto1WithoutStartVar(4);
+        System.out.println();
+        System.out.println();
+        print1toNWithoutStartVar(4);
     }
 
 }
