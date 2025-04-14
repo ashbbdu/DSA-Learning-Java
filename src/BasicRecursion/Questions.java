@@ -26,9 +26,21 @@ public class Questions {
     }
 
 
+    public static void printXNNumberofTimes (int x , int n) {
+        if(n == 0) {
+            return;
+        }
+        System.out.println(x);
+        n = n - 1;
+        printXNNumberofTimes(x ,  n);
+
+}
+
     public static void main(String[] args) {
 //        printNameTail();
 
-        printNameHead();
+//        printNameHead();
+        printXNNumberofTimes(4,4);
     }
+
 }
