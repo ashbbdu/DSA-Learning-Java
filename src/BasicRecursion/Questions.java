@@ -125,6 +125,20 @@ public class Questions {
          return s;
     }
 
+    public static boolean palindrome (String s , int left , int right) {
+        if(left >= right) return  true;
+        if(s.charAt(left) != s.charAt(right)) {
+            return false;
+        }
+        return palindrome(s , left + 1 , right - 1);
+    }
+
+    public static boolean checkPalindrome (String s) {
+        int left = 0;
+        int right = s.length() - 1;
+        return palindrome(s , left , right);
+    }
+
     public static void main(String[] args) {
 //        printNameTail();
 
@@ -157,6 +171,8 @@ public class Questions {
 
         reverseString(s);
         System.out.println(s);
+        System.out.println("Check Palindrome");
+        System.out.println(checkPalindrome("nitin"));
     }
 
 }
