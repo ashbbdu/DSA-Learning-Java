@@ -108,6 +108,13 @@ public class Questions {
     }
 
 
+    public static boolean rotateStringOptimal (String str1 , String str2) {
+        if(str1.length() != str2.length()) return false;
+        String combinedStr = str1 + str2;
+        return  combinedStr.contains(str2);
+    }
+
+
 //    public static boolean rotateString (String s , String goad) {
 //        int sIndex = 0;
 //        int goadIndex = goad.length() - 1;
@@ -165,7 +172,8 @@ public class Questions {
 //        Input : s = "abcde" , goal = "cdeab"
 
         System.out.println("Brute Rotate String");
-        System.out.println(rotateStringBrute("abcde" , "cdeab"));
+        System.out.println(rotateStringBrute("abcde" , "cdeab")); // add this solutions in the sheet
+        System.out.println(rotateStringOptimal("abcde" , "cdeab"));
     }
 
 }
