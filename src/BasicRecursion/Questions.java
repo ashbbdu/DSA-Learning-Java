@@ -37,11 +37,32 @@ public class Questions {
 
 }
 
+
+
+
+    public static void print1toN (int start ,int n) {
+        if(start > n) {
+            return;
+        }
+        System.out.println(start);
+        print1toN(start + 1  , n);
+    }
+
+    public static void printNto1 (int start ,int n) {
+        if(n < start) {
+            return;
+        }
+        System.out.println(n);
+        printNto1(start , n - 1);
+
+    }
     public static void main(String[] args) {
 //        printNameTail();
 
 //        printNameHead();
-        printXNNumberofTimes(4,4);
+//        printXNNumberofTimes(4,4);
+//        print1toN(1 , 4);
+        printNto1(1,4);
     }
 
 }
