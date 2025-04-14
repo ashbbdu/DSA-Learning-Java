@@ -31,8 +31,9 @@ public class Questions {
             return;
         }
         System.out.println(x);
-        n = n - 1;
-        printXNNumberofTimes(x ,  n);
+//        n = n - 1;
+//        printXNNumberofTimes(x ,  n);
+        printXNNumberofTimes(x , n -1);
 
 }
 
