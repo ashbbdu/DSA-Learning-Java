@@ -27,5 +27,10 @@ public class Test {
         System.out.println(a);
         System.out.println('s' +  0);
 
+
+        String ash = "Ashish";
+        String right = ash.substring(0 , 1);
+        System.out.println(right);
+
     }
 }

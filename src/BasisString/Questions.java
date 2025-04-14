@@ -94,6 +94,19 @@ public class Questions {
         }
         return  ans.toString();
     }
+//    Input : s = "abcde" , goal = "cdeab"
+    public static boolean rotateStringBrute (String str1 , String str2) {
+        if(str1.length() != str2.length()) return false;
+        for(int i = 0 ; i < str1.length() ; i++) {
+            String right = str1.substring(i);
+            String left = str1.substring(0 , i);
+            if((right + left).equals(str2)) {
+                return true;
+            }
+        }
+        return  false;
+    }
+
 
 //    public static boolean rotateString (String s , String goad) {
 //        int sIndex = 0;
@@ -149,6 +162,10 @@ public class Questions {
 //        System.out.println(Arrays.equals(a1 , a2));
 //        System.out.println("Test");
         System.out.println(validAnagramBrute("anagram" , "nagaraam"));
+//        Input : s = "abcde" , goal = "cdeab"
+
+        System.out.println("Brute Rotate String");
+        System.out.println(rotateStringBrute("abcde" , "cdeab"));
     }
 
 }
