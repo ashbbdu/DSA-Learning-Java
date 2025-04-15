@@ -1,5 +1,6 @@
 package BasicRecursion;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Questions {
@@ -156,6 +157,23 @@ public class Questions {
         return nums;
     }
 
+    public static boolean sorted (ArrayList <Integer> al , int left , int right) {
+        if (right >= al.size()) {
+            return true;
+        }
+        if (al.get(left) > al.get(right)) {
+            return false;
+        }
+        return sorted(al, left + 1, right + 1);
+    }
+
+    public static boolean isSorted (ArrayList <Integer> al) {
+        if (al.size() <= 1) {
+            return true;
+        }
+        return sorted(al, 0, 1);
+    }
+
     public static void main(String[] args) {
 //        printNameTail();
 
@@ -198,6 +216,16 @@ public class Questions {
         for(var el : crr) {
             System.out.print(el + " ");
         }
+        System.out.println();
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(1);
+        al.add(2);
+        al.add(5);
+        al.add(4);
+        al.add(5);
+        System.out.println(al);
+
+        System.out.println(isSorted(al));
     }
 
 }
