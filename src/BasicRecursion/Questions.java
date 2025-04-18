@@ -159,6 +159,7 @@ public class Questions {
 
     public static boolean sorted (ArrayList <Integer> al , int left , int right) {
         if (right >= al.size()) {
+//            agar yaha tk chla hai to array sorted hai
             return true;
         }
         if (al.get(left) > al.get(right)) {
@@ -169,9 +170,26 @@ public class Questions {
 
     public static boolean isSorted (ArrayList <Integer> al) {
         if (al.size() <= 1) {
+//            if the size of array is 1 then by default it is sorted
             return true;
         }
         return sorted(al, 0, 1);
+    }
+
+    public static int cntt = 0;
+
+    public static int findMul (int num , int start ) {
+        if(start > 5) {
+            return 0;
+        }
+        int thisCount = (num % start == 1) ? 1 : 0;
+       return thisCount + findMul(num ,  start +1 );
+
+    }
+
+    public static boolean checkPrime(int num) {
+        //your code goes here
+        return findMul(num , 1) == 2;
     }
 
     public static void main(String[] args) {
@@ -226,6 +244,9 @@ public class Questions {
         System.out.println(al);
 
         System.out.println(isSorted(al));
+        System.out.println();
+//        System.out.println(findMul(5 ,1));
+        System.out.println(checkPrime(6));
     }
 
 }

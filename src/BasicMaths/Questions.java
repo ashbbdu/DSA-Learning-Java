@@ -94,6 +94,20 @@ public class Questions {
         return ref == val;
     }
 
+    public static boolean isPerfectOptimal (int n) {
+        int num = n;
+        int total = 0;
+        for(int i = 1; i <= Math.sqrt(n) ; ++i) {
+            if(n % i == 0) {
+                total = total + i;
+                if (n / i != n && i != n / i) {
+                    total = total + (n / i);
+                }
+            }
+        }
+        return num == total;
+    }
+
     public static boolean isPrime (int num) {
         int val = 0;
         if(num == 1) return false;
@@ -175,6 +189,54 @@ public class Questions {
         return divisors;
     }
 
+
+    public static boolean isPrimeOp (int n) {
+        int count = 0;
+        for(int i = 1 ; i <= Math.sqrt(n); i++) {
+            if(n % i == 0) {
+                count = count + 1;
+
+
+                if(n / i != i) {
+                    count = count + 1;
+                }
+            }
+
+        }
+        return count == 2;
+    }
+
+    public static int primeUptoN(int n) {
+        int count  = 0;
+        // if(n == 1) return 1;
+        for(int i = 1 ;i <= n ;i++) {
+            if( isPrimeOp(i)) count ++;
+        }
+        return count;
+    }
+
+    public static int sumOfDigits(int n) {
+
+        while (n >= 10) {
+            int sum = 0;
+            while (n > 0) {
+                sum += n % 10;
+                n   /= 10;
+            }
+            n = sum;
+        }
+        return n;
+    }
+
+    public static int sumOfDigitsRecursion(int n) {
+        while(n == 0) {
+            return 0;
+        }
+        int ans = sumOfDigitsRecursion(n / 10) + (n % 10);
+        int finale = sumOfDigits(ans / 10) + (ans % 10);
+        return  finale;
+    }
+
     public static void main(String[] args) {
         System.out.println(countdigitsofanumber(1213234343));
         System.out.println(countOddDigit(1357));
@@ -184,6 +246,8 @@ public class Questions {
         System.out.println(factorial(5));
         System.out.println(checkArmstrong(153));
         System.out.println(isPerfect(496));
+        System.out.println("IS perfect optimal");
+        System.out.println(isPerfectOptimal(496));
         System.out.println(isPrime(1));
         System.out.println(gretestCommonDivisorBrute(5 , 10));
         System.out.println(gretestCommonDivisorBetter(5 , 10));
@@ -194,7 +258,11 @@ public class Questions {
         for(int i = 0 ; i < arr.length ; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
+        System.out.println("Prime upto 10");
+        System.out.println(primeUptoN(10));
 
-
+        System.out.println(sumOfDigits(22690));
+        System.out.println(sumOfDigitsRecursion(22690));
     }
 }
