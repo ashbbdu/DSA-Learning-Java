@@ -41,6 +41,26 @@ public class Questions {
         }
         return true;
     }
+
+    public static String largestOdd (String s) {
+        int zeorIndex = -1;
+        int oddIndex = -1;
+        for(int i = s.length() - 1 ; i >= 0 ; i--) {
+            if((s.charAt(i) + '0') % 2 != 0) {
+                oddIndex = i;
+                break;
+            }
+        }
+        if(oddIndex == -1) return "";
+
+        for(int i = 0 ; i < s.length() ; i++) {
+            if(s.charAt(i) == '0') {
+                zeorIndex = i;
+            }
+        }
+
+        return  s.substring(zeorIndex+1 , oddIndex+1);
+    }
     public static void main(String[] args) {
 //        char [] arr = {'h' , 'e' , 'l' , 'l' , 'o'};
 
@@ -60,5 +80,7 @@ public class Questions {
         System.out.println(isPalindrome(str));
 
 //        0214638
+        System.out.println();
+        System.out.println(largestOdd("000214638"));
     }
 }
