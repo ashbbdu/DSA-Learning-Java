@@ -16,6 +16,31 @@ public class Questions {
         }
 
     }
+
+    public static void reversStringArrOptimal(Vector<Character> s) {
+        int start = 0;
+        int end = s.size() - 1;
+        while(start <= end) {
+            char temp = s.get(start);
+            s.set(start , s.get(end));
+            s.set(end , temp);
+            start++;
+            end--;
+        }
+    }
+
+    public static boolean isPalindrome (String s) {
+        int start = 0;
+        int end = s.length() - 1;
+        while(start <= end) {
+            if(s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
     public static void main(String[] args) {
 //        char [] arr = {'h' , 'e' , 'l' , 'l' , 'o'};
 
@@ -26,8 +51,14 @@ public class Questions {
         arr.add('l');
         arr.add('o');
         System.out.println(arr);
-        reversStringArr(arr);
+//        reversStringArr(arr);
+//        System.out.println(arr);
+        reversStringArrOptimal(arr);
         System.out.println(arr);
 
+        String str = "aabbaaa";
+        System.out.println(isPalindrome(str));
+
+//        0214638
     }
 }
