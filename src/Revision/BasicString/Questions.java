@@ -93,6 +93,19 @@ public class Questions {
         String str = o + o;
         return str.contains(g);
     }
+
+    public static boolean validAnagram (String s, String t) {
+        char [] str1 = s.toCharArray();
+        char [] str2 = t.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+        for(int i = 0 ; i < str1.length ; i++) {
+            if(str1[i] != str2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
 //        char [] arr = {'h' , 'e' , 'l' , 'l' , 'o'};
 
@@ -131,5 +144,8 @@ public class Questions {
         System.out.println(original.substring(0,1));
 
         System.out.println(rotateStringOptimal("abcde" , "cdeab"));
+
+
+        System.out.println(validAnagram("anagram" , "nagaram"));
     }
 }
