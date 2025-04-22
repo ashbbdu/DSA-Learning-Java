@@ -1,5 +1,7 @@
 package Revision.Recursion;
 
+import java.util.Vector;
+
 public class Questions {
 
     public static int sumoffirstNNumbers (int n) {
@@ -29,10 +31,32 @@ public class Questions {
         return n * factorial(n - 1);
     }
 
+
+    private static void reverseCh(Vector<Character> s, int left, int right) {
+        if(left >= right) {
+            return;
+        }
+        char temp = s.get(left);
+        s.set(left , s.get(right));
+        s.set(right , temp);
+        reverseCh(s , left + 1 , right - 1);
+    }
+
+    public static void reverseStrArr(Vector<Character> s, int left, int right) {
+            reverseCh(s , left , right);
+    }
+
     public static void main(String[] args) {
         System.out.println(factorial(0));
         System.out.println(sumoffirstNNumbers(5));
         int [] arr = {1,2,3,4};
         System.out.println(sumOfArr(arr , 0));
+//       = {'h' , 'e' , 'l' ,'l' , 'o'};
+       Vector<Character> s = new Vector<>();
+       s.add('h');
+       s.add('e');
+        System.out.println(s);
+        reverseStrArr(s , 0 , s.size() - 1);
+        System.out.println(s);
     }
 }
