@@ -9,6 +9,17 @@ public class Questions {
         return n + sumoffirstNNumbers(n - 1);
     }
 
+    public static int sum (int [] arr , int left) {
+        if(left >= arr.length) {
+            return  0;
+        }
+        return arr[left] + sum(arr , left + 1);
+    }
+
+    public static int sumOfArr (int [] arr , int left) {
+        return sum(arr , 0);
+    }
+
 
     public static long factorial(int n) {
         if(n <= 1) {
@@ -21,5 +32,7 @@ public class Questions {
     public static void main(String[] args) {
         System.out.println(factorial(0));
         System.out.println(sumoffirstNNumbers(5));
+        int [] arr = {1,2,3,4};
+        System.out.println(sumOfArr(arr , 0));
     }
 }
