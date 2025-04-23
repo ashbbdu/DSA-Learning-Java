@@ -40,8 +40,26 @@ public class SecondLargest {
         return secondLargest == Integer.MIN_VALUE ? -1 : secondLargest;
     }
 
+
+    public static int secondLargestElementoptimal(int[] nums) {
+        int n = nums.length;
+        if(n < 2) return -1;
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for(int i = 0 ; i < n ; i++) {
+            if(nums[i] > largest) {
+                secondLargest = largest;
+                largest = nums[i];
+            } else if(nums[i] > secondLargest && nums[i] != largest) {
+                secondLargest = nums[i];
+            }
+        }
+        return secondLargest == Integer.MIN_VALUE ? -1 : secondLargest;
+    }
+
     public static void main(String[] args) {
-        int [] arr = {3,4,5,1,2,6,7,9, 10,10};
+        int [] arr = {3,4,5,1,2,6,7,9, 10,10,11};
 //        for(var a : arr) {
 //            System.out.print(a + " ");
 //        }
@@ -49,6 +67,9 @@ public class SecondLargest {
         System.out.println(secondLargestElementBrute(arr));
 
         System.out.println(secondLargestElementBetter(arr));
+
+
+        System.out.println(secondLargestElementoptimal(arr));
 
     }
 }
