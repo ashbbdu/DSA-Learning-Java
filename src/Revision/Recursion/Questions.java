@@ -1,5 +1,6 @@
 package Revision.Recursion;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Questions {
@@ -50,6 +51,7 @@ public class Questions {
         System.out.println(factorial(0));
         System.out.println(sumoffirstNNumbers(5));
         int [] arr = {1,2,3,4};
+        System.out.println(arr.length + "length");
         System.out.println(sumOfArr(arr , 0));
 //       = {'h' , 'e' , 'l' ,'l' , 'o'};
        Vector<Character> s = new Vector<>();
@@ -58,5 +60,13 @@ public class Questions {
         System.out.println(s);
         reverseStrArr(s , 0 , s.size() - 1);
         System.out.println(s);
+        ArrayList<Integer> al = new ArrayList<>();
+        al.add(1);
+        al.add(2);
+        al.add(3);
+        al.add(4);
+        al.add(5);
+        System.out.println(al.get(4));
+        System.out.println( al.size());
     }
 }
