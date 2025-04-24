@@ -58,6 +58,17 @@ public class SecondLargest {
         return secondLargest == Integer.MIN_VALUE ? -1 : secondLargest;
     }
 
+
+    public static void rotateArrayByOne(int[] nums) {
+        int n = nums.length;
+        int temp = nums[0];
+        for(int i = 0 ; i < n -1 ; i++) {
+            nums[i] = nums[i+1];
+        }
+        nums[n - 1] = temp;
+     }
+
+
     public static void main(String[] args) {
         int [] arr = {3,4,5,1,2,6,7,9, 10,10,11};
 //        for(var a : arr) {
@@ -70,6 +81,12 @@ public class SecondLargest {
 
 
         System.out.println(secondLargestElementoptimal(arr));
+
+        int [] brr = {1,2,3,4,5};
+        rotateArrayByOne(brr);
+        for(var a : brr) {
+            System.out.print(a + " ");
+        }
 
     }
 }
