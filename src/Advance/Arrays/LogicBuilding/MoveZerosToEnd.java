@@ -43,6 +43,22 @@ public class MoveZerosToEnd {
             nums[nonZeroTemp.length + i] = temp[i];
         }
     }
+
+    public static void moveZeroesOptimal(int[] nums) {
+        int n = nums.length;
+        int j = 0;
+        for(int i = 0 ; i < n ; i++) {
+            if(nums[i] != 0) {
+                nums[j++] = nums[i];
+            }
+        }
+
+//        inserrt 0 ;
+//        we can also use while loop here
+        for(int i = j ; i < n ; i++) {
+            nums[i] = 0;
+        }
+    }
     public static void main(String[] args) {
         int [] arr = {1,0,2,0,5,0,7};
         moveZeroesBrute(arr);
@@ -50,6 +66,10 @@ public class MoveZerosToEnd {
             System.out.print(el + " ");
         }
         System.out.println();
-
+        int [] brr = {1,0,2,0,5,0,7};
+        moveZeroesOptimal(brr);
+        for (var el : brr) {
+            System.out.print(el + " ");
+        }
     }
 }
