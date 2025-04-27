@@ -1,5 +1,8 @@
 package Advance.Arrays.Fundamentals;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LeftRotateArray {
     public static void leftRotateByK (int [] arr , int k) {
         int n = arr.length;
@@ -96,6 +99,24 @@ public class LeftRotateArray {
     }
 
 
+
+    public static void moveZeroesOptimal(int[] nums) {
+        int n = nums.length;
+        int j = 0;
+        for(int i = 0 ; i < n ; i++) {
+            if(nums[i] != 0) {
+                nums[j++] = nums[i];
+            }
+        }
+
+//        inserrt 0 ;
+//        we can also use while loop here
+        for(int i = j ; i < n ; i++) {
+            nums[i] = 0;
+        }
+    }
+
+
     public static void main(String[] args) {
 //        int arr [] =  {1,2,3,4,5,6,7};
 //        int k = 4;
@@ -124,5 +145,18 @@ public class LeftRotateArray {
         for(var  el : drr) {
             System.out.print(el + " ");
         }
+        System.out.println();
+        int [] err = {0, 0, 3, 3, 5, 6};
+        moveZeroesOptimal(err);
+
+        for(var  el : err) {
+            System.out.print(el + " ");
+        }
+        System.out.println();
+        HashSet<Integer> st = new HashSet<>();
+        for(int i = 0 ; i < err.length ; i++) {
+            st.add(err[i]);
+        }
+        System.out.println(st.size());
     }
 }
