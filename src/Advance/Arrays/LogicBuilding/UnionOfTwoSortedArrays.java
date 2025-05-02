@@ -4,6 +4,7 @@ import java.util.*;
 
 public class UnionOfTwoSortedArrays {
 //    brute force approach
+//    complete the optimal approach
     public static int[] unionArray(int[] nums1, int[] nums2) {
         Set<Integer> st = new TreeSet<>();
         for(var el : nums1) {
