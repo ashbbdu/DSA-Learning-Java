@@ -1,6 +1,19 @@
 import java.util.Arrays;
 
 public class Test {
+    public static int checkSecondLargest (int [] nums) {
+        Arrays.sort(nums);
+        int secondLargest = -1;
+        for(int i = nums.length - 1;  i > 0 ; i-- ) {
+            if(nums[i] != nums[i - 1]) {
+                secondLargest = nums[i - 1];
+                break;
+            }
+        }
+
+        return  secondLargest;
+    }
+
     public static void main(String[] args) {
         int n = 1234;
         System.out.println(n);
@@ -32,5 +45,16 @@ public class Test {
         String right = ash.substring(0 , 1);
         System.out.println(right);
 
+        int [] crr = {4,1,5,3,5,5 ,4,4,6};
+        int [] drr = {2};
+//        Arrays.sort(crr);
+//        for (var c : crr) {
+//            System.out.print(c + " ");
+//        }
+
+        int ans = checkSecondLargest(crr);
+        int an = checkSecondLargest(drr);
+        System.out.println(ans + " ans");
+        System.out.println(an + " an");
     }
 }
