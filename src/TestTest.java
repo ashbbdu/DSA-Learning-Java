@@ -39,6 +39,27 @@ public class TestTest {
 
     }
 
+
+    public static void rotateLeftByK (int [] nums , int k) {
+        int n = nums.length;
+        k = k % n;
+        int [] temp = new int[k];
+        for(int i = 0 ; i < k ; i++) {
+            temp[i] = nums[i];
+        }
+
+        for(int i = k ; i < n ; i++) {
+            nums[i - k] = nums[i];
+        }
+
+//        merge the temp array to main array;
+        for(int i = 0 ; i < k ; i++) {
+            nums[n - k + i] = temp[i];
+        }
+
+    }
+
+
     public static void main(String[] args) {
         int [] arr = {1, 2, 3, 4, 5, 6};
         rotateByK(arr , 2);
@@ -51,6 +72,13 @@ public class TestTest {
         rotateRightByK(brr , 2);
 
         for(var el : brr) {
+            System.out.print(el + " ");
+        }
+
+        int [] crr = {3, 4, 1, 5, 3, -5};
+        rotateLeftByK(crr , 8);
+        System.out.println("crrr");
+        for(var el : crr) {
             System.out.print(el + " ");
         }
     }
