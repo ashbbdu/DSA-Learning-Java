@@ -25,10 +25,33 @@ public class MoveZerosToEnd {
 
     }
 
+    public static void moveZerostoEndOptimal (int [] nums) {
+        int n = nums.length;
+        int j = 0;
+//       move non zero elements to start
+        for(int i = 0 ; i < n ; i++) {
+            if(nums[i] != 0) {
+                nums[j++] = nums[i];
+            }
+        }
+
+//        fill the remaining spaces with zero
+        for(int i = j; i < n ;i ++) {
+            nums[i] = 0;
+        }
+    }
+
     public static void main(String[] args) {
         int [] arr = {0, 1, 4, 0, 5, 2};
         moveZerostoEndBrute(arr);
         for(var el : arr) {
+            System.out.print(el + " ");
+        }
+
+        System.out.println();
+        int [] brr = {0, 1, 4, 0, 5, 2};
+        moveZerostoEndOptimal(brr);
+        for(var el : brr) {
             System.out.print(el + " ");
         }
     }
