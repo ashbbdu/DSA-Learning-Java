@@ -41,6 +41,26 @@ public class MoveZerosToEnd {
         }
     }
 
+
+    public static void moveZerostoStart(int [] nums) {
+        int n = nums.length;
+        int j = n - 1;
+        for(int i = n -1 ; i >= 0 ; i--) {
+            if(nums[i] != 0) {
+                nums[j--] = nums[i];
+
+            }
+        }
+
+
+
+//        fill the array with zero
+        for(int i = 0 ; i < j ; i++) {
+            nums[i] = 0;
+        }
+    }
+
+
     public static void main(String[] args) {
         int [] arr = {0, 1, 4, 0, 5, 2};
         moveZerostoEndBrute(arr);
@@ -52,6 +72,12 @@ public class MoveZerosToEnd {
         int [] brr = {0, 1, 4, 0, 5, 2};
         moveZerostoEndOptimal(brr);
         for(var el : brr) {
+            System.out.print(el + " ");
+        }
+        System.out.println();
+        int [] crr = {0, 1, 4, 0, 5, 2};
+        moveZerostoStart(crr);
+        for(var el : crr) {
             System.out.print(el + " ");
         }
     }
