@@ -53,7 +53,7 @@ public class FindTheMissingNumber {
     }
 
     public static void main(String[] args) {
-        int [] arr = {1, 3, 6, 4, 2, 5};
+        int [] arr = { 0, 1, 2, 4, 5, 6};
 //        0, 1, 2, 4, 5, 6
         System.out.println( findMissingNumberBrute(arr));
         System.out.println(findMissingNumberOptimalOne(arr));
