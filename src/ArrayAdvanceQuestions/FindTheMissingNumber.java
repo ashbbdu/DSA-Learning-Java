@@ -35,13 +35,20 @@ public class FindTheMissingNumber {
     }
 
     public static int findMissingNumberOptimalTwo (int [] nums) {
-
+        int xor1 = 0;
+        int xor2 = 0;
+        for(int i = 0 ; i < nums.length ; i++) {
+            xor1 = xor1 ^ nums[i];
+            xor2 = xor2 ^ (i +1);
+        }
+        return xor1 ^ xor2;
     }
 
     public static void main(String[] args) {
-        int [] arr = {0, 1, 2, 4, 5, 6};
+        int [] arr = {1, 3, 6, 4, 2, 5};
 //        0, 1, 2, 4, 5, 6
         System.out.println( findMissingNumberBrute(arr));
         System.out.println(findMissingNumberOptimalOne(arr));
+        System.out.println(findMissingNumberOptimalTwo(arr));
     }
 }
