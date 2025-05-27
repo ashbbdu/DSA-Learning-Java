@@ -22,10 +22,35 @@ public class ReArrangeElementBySign {
         return nums;
 
     }
+
+
+    public static int[] rearrangeArrayOptimal(int[] nums) {
+        int n = nums.length;
+        int posIndex = 0;
+        int negIndex =1;
+        int [] newArr = new int[n];
+//        dry run and tc and sc in office
+        for(int i = 0 ; i < n ; i++) {
+            if(nums[i] < 0) {
+                newArr[negIndex] = nums[i];
+
+                negIndex = negIndex+2;
+            } else  {
+                newArr[posIndex] = nums[i];
+                posIndex = posIndex + 2;
+            }
+        }
+        return newArr;
+    }
     public static void main(String[] args) {
         int [] arr = {1, -1, -3, -4, 2, 3};
         int [] ans = rearrangeArrayBrute(arr);
+        int [] anss = rearrangeArrayOptimal(arr);
         for(var el : ans) {
+            System.out.print(el + " ");
+        }
+        System.out.println();
+        for(var el : anss) {
             System.out.print(el + " ");
         }
     }
