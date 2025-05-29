@@ -1,4 +1,4 @@
-package NewStart.Basics.Arrays;
+package NewStart.Basics.Maths;
 
 public class CountAllDigits {
     public static int countDigits (int n) {

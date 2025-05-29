@@ -1,4 +1,4 @@
-package NewStart.Basics.Arrays;
+package NewStart.Basics.Maths;
 
 public class CountOddNumbers {
     public static int countOddDigit(int n) {
