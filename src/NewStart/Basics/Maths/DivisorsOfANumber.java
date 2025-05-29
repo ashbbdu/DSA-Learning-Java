@@ -26,8 +26,8 @@ public class DivisorsOfANumber {
     }
 
     public static int[] divisorsOptimal(int n) {
-        int cnt = countDivisors(n);
-        int [] nums = new int[cnt];
+
+        int [] nums = new int[n];
         int count = 0;
         for(int i = 1 ; i < Math.sqrt(n) ; i++) {
             if(n % i == 0) {
@@ -38,8 +38,9 @@ public class DivisorsOfANumber {
                 }
             }
         }
-//        Arrays.sort(nums);
-        return nums;
+        int[] ans = Arrays.copyOf(nums, count);
+        Arrays.sort(ans);
+        return ans;
     }
     public static void main(String[] args) {
         int [] arr = divisorsOptimal(6);
