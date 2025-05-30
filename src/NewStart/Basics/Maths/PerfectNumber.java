@@ -6,7 +6,7 @@ public class PerfectNumber {
         for(int i = 1 ; i <= Math.sqrt(n) ; i++) {
             if(n %  i == 0) {
                 count = count + i;
-//            n / i != n adding counter part if it in not  n && i != n / i   if it is not n itself
+//            n / i != n adding counter part if it in not  n (means it should be different and not n) && i != n / i   if it is not n itself (means exclude n)
                     if(n / i != n && i != n / i) {
                         count = count + (n / i);
                     }
