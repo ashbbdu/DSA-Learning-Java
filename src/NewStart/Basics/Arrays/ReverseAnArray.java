@@ -1,6 +1,13 @@
 package NewStart.Basics.Arrays;
 
 public class ReverseAnArray {
+
+
+    public static void reverseArrayRecursion (int [] arr , int start , int end) {
+
+    }
+
+
     public static void reverseArray (int [] arr) {
         int start = 0;
         int end = arr.length -1;
@@ -18,5 +25,11 @@ public class ReverseAnArray {
         for(var el : arr) {
             System.out.print(el + " ");
         }
+        System.out.println();
+
+        int [] brr = {1,2,3,4,5};
+        int start = 0;
+        int end = brr.length -1;
+        reverseArrayRecursion(arr , start , end);
     }
 }
