@@ -4,7 +4,13 @@ public class ReverseAnArray {
 
 
     public static void reverseArrayRecursion (int [] arr , int start , int end) {
-
+        while(start > end) {
+            return;
+        }
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        reverseArrayRecursion(arr , start+1 , end - 1);
     }
 
 
@@ -30,6 +36,9 @@ public class ReverseAnArray {
         int [] brr = {1,2,3,4,5};
         int start = 0;
         int end = brr.length -1;
-        reverseArrayRecursion(arr , start , end);
+        reverseArrayRecursion(brr , start , end);
+        for(var el : brr) {
+            System.out.print(el + " ");
+        }
     }
 }
