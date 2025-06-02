@@ -4,6 +4,7 @@ public class ReverseAnArray {
 
 
     public static void reverseArrayRecursion (int [] arr , int start , int end) {
+//        using recurssion
         while(start > end) {
             return;
         }
