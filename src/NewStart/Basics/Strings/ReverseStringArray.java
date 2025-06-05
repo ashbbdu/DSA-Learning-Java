@@ -23,7 +23,7 @@ public class ReverseStringArray {
         while(start < end) {
             char temp = s.get(start);
             s.set(start , s.get(end));
-            s.set(end , s.get(temp));
+            s.set(end , temp);
             start++;
             end--;
         }
