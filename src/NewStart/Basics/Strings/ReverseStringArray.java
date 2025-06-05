@@ -9,7 +9,6 @@ public class ReverseStringArray {
         for(int i = 0 ; i < s.size()  ; i++) {
             st.push(s.elementAt(i));
         }
-//        System.out.println(st);
         for(int i =0 ; i < s.size() ; i++) {
             s.set(i , st.pop());
         }
