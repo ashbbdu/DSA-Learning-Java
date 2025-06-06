@@ -1,12 +1,12 @@
 package NewStart.Basics.Strings;
 
 public class RotateString {
-    public static boolean rotateString(String s, String goal) {
+    public static boolean rotateStringBrute(String s, String goal) {
 //        base case
         if(s.length() != goal.length()) return false;
         for(int i =0 ; i < s.length() ;i++) {
            String rotated = s.substring(i , s.length()) + s.substring(0 , i);
-            System.out.println(rotated);
+//            System.out.println(rotated);
             if(rotated.equals(goal)) {
                 return true;
             }
@@ -14,8 +14,15 @@ public class RotateString {
 
         return  false;
     }
+
+    public static boolean rotateStringOptmal(String s, String goal) {
+        if(s.length() != goal.length()) return false;
+        String rotated =  s + s;
+        System.out.println(rotated + " rotated");
+        return rotated.contains(goal);
+    }
     public static void main(String[] args) {
-        System.out.println(rotateString("abcde", "adeac"));
+        System.out.println(rotateStringBrute("abcde", "cdeab"));
         String str = "abcde";
 //        String a =  str.substring(0 , str.length()) + str.substring(0,0);
 //        String s =  str.substring(1 , str.length()) + str.substring(0,1);
@@ -29,5 +36,6 @@ public class RotateString {
 //        System.out.println(e);
 //        System.out.println(f);
 //        System.out.println(g);
+        System.out.println(rotateStringOptmal("abcde", "cdeab"));
     }
 }
