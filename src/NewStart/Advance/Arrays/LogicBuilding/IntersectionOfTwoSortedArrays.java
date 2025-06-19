@@ -21,6 +21,15 @@ public class IntersectionOfTwoSortedArrays {
                 }
             }
         }
+//        यह code हर nums1[i] को nums2[j] से compare कर रहा है। जब match मिलता है तो हम चेक करते हैं कि क्या nums2[j] पहले से use तो नहीं हुआ (visited[j] == 0)।
+//
+//✅ इसलिए:
+//        हमको सिर्फ यह track करना है कि nums2 का कौन सा element use हो चुका है।
+//
+//        इसलिए हम visited[] array बनाएँगे जो सिर्फ nums2 के elements को represent करे।
+//
+//        अगर nums2.length = 3 है, तो visited = [0, 0, 0]
+//→ मतलब: 3 elements हैं, और कोई भी use नहीं हुआ है अभी तक।
         int [] ansList = new int[ans.size()];
         for(int i = 0 ; i < ans.size() ; i++) {
             ansList[i] = ans.get(i);
