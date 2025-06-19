@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class LeadersInAnArray {
-    public static ArrayList<Integer> leaders(int[] nums) {
+    public static ArrayList<Integer> leadersOptima(int[] nums) {
         ArrayList<Integer> arr = new ArrayList<>();
         int max = nums[nums.length - 1];
         arr.add(nums[nums.length - 1]);
@@ -19,6 +19,34 @@ public class LeadersInAnArray {
         Collections.reverse(arr);
         return arr;
     }
+
+    public static ArrayList<Integer> leadersBrute(int[] nums) {
+        ArrayList<Integer> arr = new ArrayList<>();
+//        System.out.println(nums[nums.length - 1]);
+
+
+        for(int i = 0 ;  i < nums.length ; i++) {
+            boolean flag = true;
+            for(int j = i+1 ;  j< nums.length; j++) {
+//                if(nums[i] <= nums[j]) {
+//                    flag = false;
+//                    break;
+//                }
+//                or
+                if(nums[i] >= nums[j]) {
+                    flag = true;
+
+                }else {
+                    flag = false;
+                    break;
+                }
+
+            }
+            if(flag) arr.add(nums[i]);
+
+        }
+        return arr;
+    }
     public static void main(String[] args) {
         int [] arr = {-3, 4, 5, 1, -4, -5};
 //        int[] arr = {
@@ -27,6 +55,9 @@ public class LeadersInAnArray {
 //                952, 714, 608, 346, 182, 956, 582, 924, 850, 705,
 //                835, 426
 //        };
-        System.out.println(leaders(arr));
+        System.out.println(leadersOptima(arr));
+
+        int [] brr = {-3, 4, 5, 1, -4, -5};
+        System.out.println(leadersBrute(brr));
     }
 }
