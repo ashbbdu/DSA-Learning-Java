@@ -29,8 +29,8 @@ public class PascleTriangle1 {
         return (int)res;
     }
     public static void main(String[] args) {
-        int row = 4;
-        int col = 2;
+        int row = 3;
+        int col = 1;
 //        System.out.println(pascalTriangleIExtreameBrute(row , col));
 
         System.out.println(pascalTriangleI(row -1, col-1 ));
