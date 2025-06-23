@@ -31,17 +31,7 @@ public class LeadersInAnArray {
                 if(nums[i] < nums[j]) {
                     flag = false;
                     break;
-                } else if (nums[i] == nums[j]) {
-                    flag = true;
                 }
-//                or
-//                if(nums[i] > nums[j]) {
-//                    flag = true;
-//
-//                }else {
-//                    flag = false;
-//                    break;
-//                }
 
             }
             if(flag) arr.add(nums[i]);
