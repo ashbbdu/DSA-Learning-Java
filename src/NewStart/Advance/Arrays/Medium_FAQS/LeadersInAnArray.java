@@ -22,24 +22,26 @@ public class LeadersInAnArray {
 
     public static ArrayList<Integer> leadersBrute(int[] nums) {
         ArrayList<Integer> arr = new ArrayList<>();
-//        System.out.println(nums[nums.length - 1]);
+
 
 
         for(int i = 0 ;  i < nums.length ; i++) {
             boolean flag = true;
             for(int j = i+1 ;  j< nums.length; j++) {
-//                if(nums[i] <= nums[j]) {
+                if(nums[i] < nums[j]) {
+                    flag = false;
+                    break;
+                } else if (nums[i] == nums[j]) {
+                    flag = true;
+                }
+//                or
+//                if(nums[i] > nums[j]) {
+//                    flag = true;
+//
+//                }else {
 //                    flag = false;
 //                    break;
 //                }
-//                or
-                if(nums[i] >= nums[j]) {
-                    flag = true;
-
-                }else {
-                    flag = false;
-                    break;
-                }
 
             }
             if(flag) arr.add(nums[i]);
@@ -57,7 +59,10 @@ public class LeadersInAnArray {
 //        };
         System.out.println(leadersOptima(arr));
 
-        int [] brr = {-3, 4, 5, 1, -4, -5};
+        int [] brr = { 946, 978, 781, 472, 738, 705, 457, 152, 659, 238,
+                132, 739, 992, 699, 903, 903, 330, 600, 696, 671,
+                952, 714, 608, 346, 182, 956, 582, 924, 850, 705,
+                835, 426};
         System.out.println(leadersBrute(brr));
     }
 }
