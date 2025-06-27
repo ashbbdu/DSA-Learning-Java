@@ -34,7 +34,7 @@ public class LeadersInAnArray {
                 }
 
             }
-            if(flag) arr.add(nums[i]); // if flag is true add that number into arr
+            if(flag) arr.add(nums[i]); // if flag is true add that number into array
 
         }
         return arr;
