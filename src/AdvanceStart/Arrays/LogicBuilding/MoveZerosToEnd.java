@@ -1,4 +1,4 @@
-package AdvanceStart.Arrays.Fundamentals;
+package AdvanceStart.Arrays.LogicBuilding;
 
 import java.util.Arrays;
 
