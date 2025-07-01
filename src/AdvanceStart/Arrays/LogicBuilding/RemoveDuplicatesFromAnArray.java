@@ -20,9 +20,20 @@ public class RemoveDuplicatesFromAnArray {
         return ts.size();
     }
 
-    public static int removeDuplicatesBrute(int[] nums) {}
+    public static int removeDuplicatesOptimal(int[] nums) {
+        int n = nums.length;
+        int i = 0;
+        for(int j = 1; j < n ; j++) {
+            if(nums[j] != nums[i]){
+                nums[i+1] = nums[j];
+                i++;
+            }
+        }
+        return i+1;
+    }
     public static void main(String[] args) {
         int [] arr = {0, 0, 3, 3, 5, 6};
         System.out.println(removeDuplicatesBrute(arr));
+        System.out.println(removeDuplicatesOptimal(arr));
     }
 }
