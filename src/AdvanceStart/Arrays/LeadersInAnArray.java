@@ -3,6 +3,12 @@ package AdvanceStart.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//Similar questions
+//Count the number of leaders
+//
+//        Return index of leaders
+//
+//        Return sum of leaders
 public class LeadersInAnArray {
     public static ArrayList<Integer> leadersBrute(int[] nums) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -22,8 +28,24 @@ public class LeadersInAnArray {
         }
       return list;
     }
+
+    public static ArrayList<Integer> leadersOptimal(int[] nums) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int n = nums.length;
+        int max = nums[n-1];
+        list.add(max);
+        for(int i = n - 2 ; i >= 0 ;i--) {
+            if(nums[i] > max) {
+                list.add(nums[i]);
+                max = nums[i];
+            }
+        }
+        Collections.reverse(list);
+        return list;
+    }
     public static void main(String[] args) {
         int [] arr = {1, 2, 5, 3, 1, 2};
         System.out.println(leadersBrute(arr));
+        System.out.println(leadersOptimal(arr));
     }
 }
