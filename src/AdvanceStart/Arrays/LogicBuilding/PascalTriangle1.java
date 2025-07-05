@@ -13,7 +13,7 @@ public class PascalTriangle1 {
     }
     public static void main(String[] args) {
         int r = 5;
-        int c = 3;
+        int c = 0;
         System.out.println(pascalTriangleI(r , c));
     }
 }
