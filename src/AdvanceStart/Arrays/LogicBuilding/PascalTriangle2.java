@@ -46,7 +46,7 @@ public class PascalTriangle2 {
         System.out.println(getRow(3));
         int [] ans = pascalTriangleIIBrute(3);
         System.out.println(Arrays.toString(ans));
-        int [] nums = pascalTriangleIIOptimal(3);
+        int [] nums = pascalTriangleIIOptimal(6);
         System.out.println(Arrays.toString(nums));
     }
 }
