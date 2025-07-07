@@ -27,6 +27,34 @@ public class RotateMatrixby90 {
             System.out.println();
         }
     }
+
+
+    public static void rotateMatrixOptimal(int[][] matrix) {
+        int n = matrix.length;
+//        transpose a matrix
+        for(int i = 0 ; i < n ; i++) {
+            for(int j = 0 ; j < i ; j++) {
+//                swap the elements in the matrix
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+//        swap
+        for (int i = 0; i < n; i++) {
+            int left = 0;
+            int right = n - 1;
+
+            while (left < right) {
+                int temp = matrix[i][left];
+                matrix[i][left] = matrix[i][right];
+                matrix[i][right] = temp;
+
+                left++;
+                right--;
+            }
+        }
+    }
     public static void main(String[] args) {
         int [][] arr = new int[3][3];
         int count = 1;
@@ -36,12 +64,22 @@ public class RotateMatrixby90 {
             }
             System.out.println();
         }
-        rotateMatrixBrute(arr);
+//        rotateMatrixBrute(arr);
 //        for(int i = 0 ; i < arr.length ; i++) {
 //            for(int j = 0 ; j < arr.length ; j++) {
 //                System.out.print(arr[i][j] + " ");;
 //            }
 //            System.out.println();
 //        }
+        rotateMatrixOptimal(arr);
+        for(int i = 0 ; i < arr.length ; i++) {
+            for(int j = 0 ; j < arr.length ; j++) {
+                System.out.print(arr[i][j] + " ");;
+            }
+            System.out.println();
+        }
+
+
     }
+
 }
