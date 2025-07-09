@@ -57,6 +57,7 @@ public class SearchXinsortedarray {
     }
 
     public static int searchOptimaBinarySearchRecursive(int[] nums, int target) {
+//        using recursion
         int start = 0;
         int end = nums.length - 1;
         return func(nums , start , end , target);
