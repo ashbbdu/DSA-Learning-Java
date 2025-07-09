@@ -1,6 +1,7 @@
 package AdvanceStart.HashingConcepts;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapTut {
     public static void main(String[] args) {
@@ -17,5 +18,9 @@ public class HashMapTut {
         System.out.println(map.containsKey("Ashish"));
         System.out.println(map.get("Ashish"));
         System.out.println(map.get("test"));
+
+        for(Map.Entry<String , Integer> entry : map.entrySet()) {
+            System.out.println(entry.getValue());
+        }
     }
 }
