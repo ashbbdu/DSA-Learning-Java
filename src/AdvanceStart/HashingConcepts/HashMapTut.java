@@ -19,8 +19,9 @@ public class HashMapTut {
         System.out.println(map.get("Ashish"));
         System.out.println(map.get("test"));
 
+        System.out.println();
         for(Map.Entry<String , Integer> entry : map.entrySet()) {
-            System.out.println(entry.getValue());
+            System.out.println(entry.getValue() + " : " + entry.getKey());
         }
     }
 }
