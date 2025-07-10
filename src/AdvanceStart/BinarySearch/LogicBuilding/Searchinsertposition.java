@@ -11,7 +11,7 @@ public class Searchinsertposition {
         return n;
     }
 
-    public static int searchInsertOptima(int[] nums, int target) {
+    public static int searchInsertOptimal(int[] nums, int target) {
         int n = nums.length;
         int start = 0;
         int end = n - 1;
@@ -22,15 +22,16 @@ public class Searchinsertposition {
                ans = mid;
                end = mid - 1;
             } else {
-                start = start + 1;
+                start = mid + 1;
             }
             mid = start + (end - start) / 2;
         }
         return ans;
     }
+
     public static void main(String[] args) {
         int [] arr = {1,2,5,7,8,9,11};
         System.out.println(searchInsertBrute(arr , 10));
-        System.out.println(searchInsertOptima(arr , 10));
+        System.out.println(searchInsertOptimal(arr , 10));
     }
 }
