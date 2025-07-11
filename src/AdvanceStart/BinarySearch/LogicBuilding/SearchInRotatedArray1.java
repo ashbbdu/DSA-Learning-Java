@@ -14,20 +14,32 @@ public class SearchInRotatedArray1 {
         int start = 0;
         int end = nums.length - 1;
         int mid = start + (end - start) / 2;
-        int ans = -1;
-
         while(start <= end) {
             if(nums[mid] == k) {
-                ans = mid;
-            } else if (nums[mid] < k) {
-                start = mid + 1;
-            } else {
-
-                end = mid - 1;
+                return mid;
             }
+            if(nums[start] <= nums[mid])  { // <= because the array could also be 1,1,1,1,1,1
+                //means the left array is sorted
+                if(nums[start] <= k &&  k <= nums[mid]) { // checking if target is in this range or not
+//                    if element is present in this rannge
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+            else {
+//                nums[start] > nums[end] means the right array is sorted
+                if((nums[mid] <= k && k <= nums[end])) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+
             mid = start + (end - start) / 2;
         }
-        return ans;
+
+        return -1;
     }
     public static void main(String[] args) {
         int [] nums = {4, 5, 6, 7, 0, 1, 2};
