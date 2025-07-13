@@ -13,5 +13,20 @@ public class HashingConcepts {
 //        }
 
         System.out.println(hashArr[5]);
+
+
+//        Char hashing
+
+        String name = "aashish";
+        int[] freq = new int[26]; // for 'a' to 'z'
+
+        for (int i = 0; i < name.length(); i++) {
+            char c = name.charAt(i);
+            System.out.println(c + " c");
+            freq[c - 'a']++; // subtract 'a' to get index 0-25
+        }
+
+        System.out.println("Frequency of 'a': " + freq['a' - 'a']); // prints 1
+        System.out.println("Frequency of 's': " + freq['s' - 'a']); // prints 2
     }
 }
