@@ -14,7 +14,8 @@ public class KokoEatingBananas {
     public static long calculateHourse (int[] nums , int index) {
         long     totalTime = 0;
         for(int i = 0 ;  i < nums.length ; i++) {
-            totalTime = totalTime + (int)Math.ceil((double)nums[i] / index);
+            totalTime += (nums[i] + index - 1) / index;
+
         }
         return totalTime;
     }
@@ -29,9 +30,31 @@ public class KokoEatingBananas {
         }
         return maxElem;
     }
+
+    public static int minimumRateToEatBananasOptima(int[] nums, int h) {
+        int start = 1;
+        int end = findMinimum(nums);
+
+        int ans = 0;
+        while(start <= end) {
+            int mid = start + (end - start)/2;
+            if(calculateHourse(nums , mid)  <= h) {
+                ans = mid;
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+
+//        return start; or
+        return ans;
+    }
     public static void main(String[] args) {
-        int [] arr = {3, 7, 6, 11};
-        int totalTime = 8;
-        System.out.println(minimumRateToEatBananasBrute(arr , totalTime));
+//        int [] arr = {7, 15, 6, 3};
+        int [] arr = {805306368,805306368,805306368};
+//        int totalTime = 8;
+        int totalTime = 1000000000;
+//        System.out.println(minimumRateToEatBananasBrute(arr , totalTime));
+        System.out.println(minimumRateToEatBananasOptima(arr , totalTime));
     }
 }
