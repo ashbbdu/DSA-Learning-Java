@@ -51,6 +51,7 @@ public class KokoEatingBananas {
     }
     public static void main(String[] args) {
 //        int [] arr = {7, 15, 6, 3};
+//        brute solution will not work for larger inputs
         int [] arr = {805306368,805306368,805306368};
 //        int totalTime = 8;
         int totalTime = 1000000000;
