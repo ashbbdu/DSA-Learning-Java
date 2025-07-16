@@ -50,7 +50,6 @@ public class KokoEatingBananas {
         return ans;
     }
     public static void main(String[] args) {
-//        solution
 //        int [] arr = {7, 15, 6, 3};
         int [] arr = {805306368,805306368,805306368};
 //        int totalTime = 8;
