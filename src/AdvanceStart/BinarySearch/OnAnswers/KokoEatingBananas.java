@@ -57,5 +57,6 @@ public class KokoEatingBananas {
         int totalTime = 1000000000;
 //        System.out.println(minimumRateToEatBananasBrute(arr , totalTime));
         System.out.println(minimumRateToEatBananasOptima(arr , totalTime));
+        System.out.println("Working solution");
     }
 }
