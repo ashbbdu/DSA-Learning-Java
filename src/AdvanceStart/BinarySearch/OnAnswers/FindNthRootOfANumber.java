@@ -13,9 +13,11 @@ public class FindNthRootOfANumber {
         for(int i = 1; i <= M ; i++) {
             if(pow(i , N , M ) == M) {
                 return i;
-            } else if(pow(i , N , M) > M) {
-                break;
             }
+//            not required but check with other test cases as well
+//            else if(pow(i , N , M) > M) {
+//                break;
+//            }
         }
         return -1;
     }
