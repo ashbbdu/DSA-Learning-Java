@@ -31,9 +31,30 @@ public class AggresiveCows {
         }
         return range;
     }
+
+    public static int aggressiveCowsOptimal(int[] nums, int k) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int min = nums[0];
+        int max = nums[n-1];
+        int start = 0;
+        int end = max - min;
+        int ans = -1;
+        while(start <= end) {
+            int mid = start + (end - start) / 2;
+            if(canWePlace(nums , mid , k)) {
+                ans = mid;
+                start = mid +1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
-        int [] nums =  {5,4,3,2,1,1000000000};
-        int k = 2;
+        int [] nums =  {0, 3, 4, 7, 10, 9};
+        int k = 3;
         System.out.println(aggressiveCows(nums , k));
+        System.out.println(aggressiveCowsOptimal(nums , k));
     }
 }
