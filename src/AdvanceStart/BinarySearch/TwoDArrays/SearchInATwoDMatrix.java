@@ -40,9 +40,35 @@ public class SearchInATwoDMatrix {
         }
         return false;
     }
+
+
+    public static boolean searchNumberOptimal(int[][] mat, int target) {
+        int n = mat.length;
+        int m = mat[0].length;
+        int start = 0;
+        int end = (n * m) - 1;
+
+        while(start <= end) {
+
+            int mid = start + (end - start) / 2;
+
+            // Calculate the row and column
+            int row = mid / m;
+            int col = mid % m;
+            if(mat[row][col] == target) {
+                return true;
+            } else if (mat[row][col] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         int [][] arr = {{1, 2, 3, 4} , {5, 6, 7, 8} , {9, 10, 11, 12}};
         System.out.println(searchMatrix(arr , 8));
         System.out.println(searchNumberBetter(arr , 9));
+        System.out.println(searchNumberOptimal(arr , 21));
     }
 }
