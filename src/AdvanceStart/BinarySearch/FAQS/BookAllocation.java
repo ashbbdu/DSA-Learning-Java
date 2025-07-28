@@ -3,18 +3,18 @@ package AdvanceStart.BinarySearch.FAQS;
 public class BookAllocation {
     public static int countStudents(int[] nums, int pages) {
     // Size of array
-    int n = nums.length;
-    int pagesStudent = 0;
-    int student = 1;
-    for(int i = 0 ;  i < n ; i++) {
-        if(pagesStudent + nums[i] <= pages) {
-            pagesStudent = pagesStudent + nums[i];
-        } else {
-            student++;
-            pagesStudent = nums[i];
+        int n = nums.length;
+        int currentPagesCount = 0;
+        int totalStudents = 1; // why initially the totalStudent is 1 and not 0
+        for(int i = 0 ; i < n ; i++) {
+            if(currentPagesCount + nums[i] <= pages) {
+                currentPagesCount = currentPagesCount + nums[i];
+            } else {
+                totalStudents++;
+                currentPagesCount = nums[i];
+            }
         }
-    }
-return student;
+        return totalStudents;
 }
 
     public static int findPages(int[] nums, int m) {
@@ -31,16 +31,16 @@ return student;
             high = high + nums[i];
         }
 
-        for (int pages = low; pages <= high; pages++) {
-            if (countStudents(nums, pages) == m) {
-                return pages;
+        for(int i = low ;  i <= high ; i++) {
+            if(countStudents(nums , i ) == m) {
+                return i;
             }
         }
-        return low;
+        return  -1;
     }
     public static void main(String[] args) {
-        int[] arr = {25, 46, 28, 49, 24};
-        int m = 4;
+        int[] arr = {713,351,266,908,224,168,591,851,369,709,655,831,970,356,538,609,149,820,393};
+        int m = 10;
         System.out.println(findPages(arr, m));
     }
 }
