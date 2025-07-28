@@ -38,9 +38,36 @@ public class BookAllocation {
         }
         return  -1;
     }
+
+    public static int findPagesOptimal(int[] nums, int m) {
+        int n = nums.length;
+
+        // Book allocation impossible
+        if (m > n) return -1;
+
+        // Calculate the range for search
+        int low = Integer.MIN_VALUE;
+        int high = 0;
+        for(int i = 0; i < n; i++){
+            low = Math.max(low, nums[i]);
+            high = high + nums[i];
+        }
+        int ans = -1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if(countStudents(nums , mid ) <= m) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return  ans;
+    }
     public static void main(String[] args) {
         int[] arr = {713,351,266,908,224,168,591,851,369,709,655,831,970,356,538,609,149,820,393};
         int m = 10;
         System.out.println(findPages(arr, m));
+        System.out.println(findPagesOptimal(arr, m));
     }
 }
