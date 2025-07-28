@@ -36,7 +36,7 @@ public class BookAllocation {
                 return i;
             }
         }
-        return  -1;
+        return  low;
     }
 
     public static int findPagesOptimal(int[] nums, int m) {
@@ -65,8 +65,8 @@ public class BookAllocation {
         return  ans;
     }
     public static void main(String[] args) {
-        int[] arr = {713,351,266,908,224,168,591,851,369,709,655,831,970,356,538,609,149,820,393};
-        int m = 10;
+        int[] arr = {462,450,652,363,96,968,493,947,669,559,758,924,931,621,334,942,724,521,227,216,781,189,758,215,278,692,125,621,281};
+        int m = 22;
         System.out.println(findPages(arr, m));
         System.out.println(findPagesOptimal(arr, m));
     }
