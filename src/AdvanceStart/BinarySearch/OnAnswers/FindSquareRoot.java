@@ -22,6 +22,26 @@ public class FindSquareRoot {
         }
         return -1;
     }
+
+    public static long floorSqrtOptimal(long n) {
+        long start = 1;
+        long end = n;
+        long ans = -1;
+        while(start <= end) {
+            long mid = start + (end - start) / 2;
+
+            if(mid * mid <= n) {
+                ans = mid;
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return ans;
+    }
+
+
+
 //    public static long floorSqrtOptimal(long n) {
 //        long start = 1;
 //        long end = n;
@@ -42,10 +62,12 @@ public class FindSquareRoot {
 //        }
 //        return ans;
 //    }
+
+
     public static void main(String[] args) {
 //        int n = 380980991;
-        long n = 32342422;
-//        System.out.println(floorSqrtOptimal(n));
+        long n = 26;
+        System.out.println(floorSqrtOptimal(n));
         System.out.println(floorSqrtBrute(n));
     }
 }
