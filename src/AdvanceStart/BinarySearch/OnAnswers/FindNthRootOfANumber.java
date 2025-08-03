@@ -39,8 +39,30 @@ public class FindNthRootOfANumber {
         return -1;
     }
 
+//     revision
+
+    public static int findPowSum(int N, int val , int M) {
+        int ans = 1;
+        for(int i = 1 ;  i <= M ; i++) {
+            ans = ans * i;
+        }
+        return ans;
+    }
+
+    public static int NthRootBrute1(int N, int M) {
+        for(int i = 1 ; i <= N ; i++) {
+            if(findPowSum(N , i , M) == N) {
+                return i;
+            } else if(findPowSum(N , i , M) >  N) {
+                return -1;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         System.out.println(NthRootBrute(9 , 512));
         System.out.println(NthRootOptimal(9 , 512));
+        System.out.println(NthRootBrute1(9 , 512));
     }
 }
