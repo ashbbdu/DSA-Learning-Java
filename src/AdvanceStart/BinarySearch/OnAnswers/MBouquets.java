@@ -36,7 +36,7 @@ public class MBouquets {
 
     public static int roseGardenOptimal(int n, int[] nums, int k, int m) {
 
-        long val = (long) m * k;
+        long val = (long) m * k; // long
         if (val > n) return -1;
         int start = Integer.MAX_VALUE, end = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
