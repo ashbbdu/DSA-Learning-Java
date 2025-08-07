@@ -23,5 +23,9 @@ public class HashMapTut {
         for(Map.Entry<String , Integer> entry : map.entrySet()) {
             System.out.println(entry.getValue() + " : " + entry.getKey());
         }
+        Integer a = 3234234;
+        System.out.println(a.hashCode());
+        String name = "Ashish";
+        System.out.println(name.hashCode());
     }
 }
