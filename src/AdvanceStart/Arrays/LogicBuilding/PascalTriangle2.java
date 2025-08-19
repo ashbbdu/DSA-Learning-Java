@@ -6,7 +6,6 @@ import java.util.List;
 
 public class PascalTriangle2 {
     public static int pascalTriangleI(int r, int c) {
-        System.out.println("pascal triangle");
         r = r - 1;
         c = c - 1;
         int ans = 1;
