@@ -12,6 +12,7 @@ public class PascalTriangle2 {
         for(int i = 0 ; i < c ; i++) {
             ans = ans * (r - i);
             ans = ans / (i + 1);
+//            done
         }
         return ans;
     }
