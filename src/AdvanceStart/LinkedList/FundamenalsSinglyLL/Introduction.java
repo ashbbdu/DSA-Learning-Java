@@ -1,5 +1,12 @@
 package AdvanceStart.LinkedList.FundamenalsSinglyLL;
 
-public class Introduction {
 
+
+public class Introduction {
+    class Node {
+
+    }
+    public static void main(String[] args) {
+
+    }
 }
