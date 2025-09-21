@@ -3,7 +3,6 @@ package AdvanceStart.LinkedList.FundamenalsSinglyLL;
 
 
 public class Introduction {
-//    start linkedlist from tomorrow
    static class Node {
         String name ;
         String email ;
