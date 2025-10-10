@@ -14,7 +14,6 @@ public class Introduction {
     public static void main(String[] args) {
         Node n1 = new  Node("ashish" , "ashish@gmail.com");
         System.out.println(n1.name);
-        System.out.println(n1.email);
-        System.out.println("test");
+        System.out.println(n1.email)
     }
 }
